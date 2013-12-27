@@ -5,704 +5,783 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Periodic Table">
 	<link rel="stylesheet" type="text/css" href="periodic_table.css" >
+	<!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<!-- // <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
+	<script src="jquery-1.10.1.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//red
+		$('.s-block li').mouseenter(function(){
+			$(this).stop().animate({backgroundColor:"white"}, 200);
+			$(this).children('a').find('.aletter').css("text-shadow", "none");
+			$(this).children('a').find('.aletter').css("color", "#E80C49");
+		});
+
+		$('.s-block li').mouseleave(function(){
+			$(this).animate({backgroundColor:"#E80C49"}, 100);
+			$(this).children('a').find('.aletter').css("text-shadow", "1px 1px 1px #000");
+			$(this).children('a').find('.aletter').css("color", "white");
+		});
+		//yellow
+		$('.d-block li').mouseenter(function(){
+			$(this).stop().animate({backgroundColor:"white"}, 200);
+			$(this).children('a').find('.aletter').css("text-shadow", "none");
+			$(this).children('a').find('.aletter').css("color", "#FFB01E");
+		});
+
+		$('.d-block li').mouseleave(function(){
+			$(this).animate({backgroundColor:"#FFB01E"}, 100);
+			$(this).css("border", "1px solid black");
+			$(this).children('a').find('.aletter').css("text-shadow", "1px 1px 1px #000");
+			$(this).children('a').find('.aletter').css("color", "white");
+		});
+		//blue
+		$('.p-block li').mouseenter(function(){
+			$(this).stop().animate({backgroundColor:"white"}, 200);
+			$(this).children('a').find('.aletter').css("text-shadow", "none");
+			$(this).children('a').find('.aletter').css("color", "#0C97E8");
+		});
+
+		$('.p-block li').mouseleave(function(){
+			$(this).animate({backgroundColor:"#0C97E8"}, 100);
+			$(this).css("border", "1px solid black");
+			$(this).children('a').find('.aletter').css("text-shadow", "1px 1px 1px #000");
+			$(this).children('a').find('.aletter').css("color", "white");
+		});
+
+		//green
+		$('.f-block li').mouseenter(function(){
+			$(this).stop().animate({backgroundColor:"white"}, 200);
+			$(this).children('a').find('.aletter').css("text-shadow", "none");
+			$(this).children('a').find('.aletter').css("color", "#01AB47");
+		});
+
+		$('.f-block li').mouseleave(function(){
+			$(this).animate({backgroundColor:"#01AB47"}, 100);
+			$(this).css("border", "1px solid black");
+			$(this).children('a').find('.aletter').css("text-shadow", "1px 1px 1px #000");
+			$(this).children('a').find('.aletter').css("color", "white");
+		});
+
+		$('.periodic li').mouseenter(function(){
+			elem_name = $(this).attr('title');
+			// elem_name = $(this).find('a').attr('href').substring(29);
+			console.log(elem_name);
+
+			$('#element h2').html(elem_name);
+		})
+
+
+		
+
+	})
+
+
+	</script>
 </head>
 <body>
 	<div class="container">
+		<div id="element">
+			<h2></h2>
+		</div>
 		<div class="header">
 			<ul id="groups_one" class="groups">
-				<li id="num1">1</li>
-				<li>2</li>
+				<li id="num1"><a href="http://en.wikipedia.org/wiki/Alkali_metal">1</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Alkaline_earth_metal">2</a></li>
 			</ul>
 			<ul id="groups_two" class="groups">
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>6</li>
-				<li>7</li>
-				<li>8</li>			
-				<li>9</li>			
-				<li>10</li>			
-				<li>11</li>			
-				<li>12</li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_3_element">3</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_4_element">4</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_5_element">5</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_6_element">6</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_7_element">7</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_8_element">8</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Group_9_element">9</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Group_10_element">10</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Group_11_element">11</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Group_12_element">12</a></li>
 			</ul>
 			<ul id="groups_three" class="groups">			
-				<li>13</li>			
-				<li>14</li>			
-				<li>15</li>			
-				<li>16</li>			
-				<li>17</li>			
-				<li>18</li>			
+				<li><a href="http://en.wikipedia.org/wiki/Group_3_element">13</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Group_3_element">14</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Pnictogen">15</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Chalcogen">16</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Halogen">17</a></li>			
+				<li><a href="http://en.wikipedia.org/wiki/Noble_gas">18</a></li>			
 			</ul>
 		</div>
 		<ul class="periodic group_period">
 			<li id="labels">
-				<p>Group</p>
-				<p>Period</p>
+				<p><a href="http://en.wikipedia.org/wiki/Group_(periodic_table)">Group</a></p>
+				<p><a href="http://en.wikipedia.org/wiki/Period_(periodic_table)">Period</a></p>
 			</li>
-			<li><p>1</p></li>
-			<li><p>2</p></li>
-			<li><p>3</p></li>
-			<li><p>4</p></li>
-			<li><p>5</p></li>
-			<li><p>6</p></li>
-			<li><p>7</p></li>			
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_1_element">1</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_2_element">2</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_3_element">3</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_4_element">4</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_5_element">5</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_6_element">6</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Period_7_element">7</a></p></li>			
 		</ul>
 		<ul class="periodic s-block">
-			<li>
+			<li title="Hydrogen"><a href="http://en.wikipedia.org/wiki/Hydrogen">
 				<p class="anumber">1</p>
 				<p class="aletter">H</p>
 				<p class="aweight">1.008</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Lithium"><a href="http://en.wikipedia.org/wiki/Lithium">
 				<p class="anumber">3</p>
 				<p class="aletter">Li</p>
 				<p class="aweight">6.94</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Sodium"><a href="http://en.wikipedia.org/wiki/Sodium">
 				<p class="anumber">11</p>
 				<p class="aletter">Na</p>
 				<p class="aweight">22.990</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Potassium"><a href="http://en.wikipedia.org/wiki/Potassium">
 				<p class="anumber">19</p>
 				<p class="aletter">K</p>
 				<p class="aweight">39.098</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Rubidium"><a href="http://en.wikipedia.org/wiki/Rubidium">
 				<p class="anumber">37</p>
 				<p class="aletter">Rb</p>
 				<p class="aweight">85.468</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Caesium"><a href="http://en.wikipedia.org/wiki/Caesium">
 				<p class="anumber">55</p>
 				<p class="aletter">Cs</p>
 				<p class="aweight">132.91</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Francium"><a href="http://en.wikipedia.org/wiki/Francium">
 				<p class="anumber">87</p>
 				<p class="aletter">Fr</p>
 				<p class="aweight">[223.02]</p>
-			</li>
+			</a></li>
 		</ul>	
 		<ul class="periodic s-block">
-			<li>
+			<li title="Beryllium"><a href="http://en.wikipedia.org/wiki/Beryllium">
 				<p class="anumber">4</p>
 				<p class="aletter">Be</p>
 				<p class="aweight">9.0122</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Magnesium"><a href="http://en.wikipedia.org/wiki/Magnesium">
 				<p class="anumber">12</p>
 				<p class="aletter">Mg</p>
 				<p class="aweight">24.305</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Calcium"><a href="http://en.wikipedia.org/wiki/Calcium">
 				<p class="anumber">20</p>
 				<p class="aletter">Ca</p>
 				<p class="aweight">40.078</p>	
-			</li>
-			<li>
+			</a></li>
+			<li title="Strontium"><a href="http://en.wikipedia.org/wiki/Strontium">
 				<p class="anumber">38</p>
 				<p class="aletter">Sr</p>
 				<p class="aweight">87.62</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Barium"><a href="http://en.wikipedia.org/wiki/Barium">
 				<p class="anumber">56</p>
 				<p class="aletter">Ba</p>
 				<p class="aweight">137.33</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Radium"><a href="http://en.wikipedia.org/wiki/Radium">
 				<p class="anumber">88</p>
 				<p class="aletter">Ra</p>
 				<p class="aweight">[226.03]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul id="row3" class="periodic d-block">
-			<li>
+			<li title="Scandium"><a href="http://en.wikipedia.org/wiki/Scandium">
 				<p class="anumber">21</p>
 				<p class="aletter">Sc</p>
 				<p class="aweight">44.956</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Yttrium"><a href="http://en.wikipedia.org/wiki/Yttrium">
 				<p class="anumber">39</p>
 				<p class="aletter">Y</p>
 				<p class="aweight">88.906</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Lutetium"><a href="http://en.wikipedia.org/wiki/Lutetium">
 				<p class="anumber">71</p>
 				<p class="aletter one_star">Lu</p>
 				<p class="aweight">174.97</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Lawrencium"><a href="http://en.wikipedia.org/wiki/Lawrencium">
 				<p class="anumber">103</p>
 				<p class="aletter two_star">Lr</p>
 				<p class="aweight">[262.11]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Titanium"><a href="http://en.wikipedia.org/wiki/Titanium">
 				<p class="anumber">22</p>
 				<p class="aletter">Ti</p>
 				<p class="aweight">47.867</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Zirconium"><a href="http://en.wikipedia.org/wiki/Zirconium">
 				<p class="anumber">40</p>
 				<p class="aletter">Zr</p>
 				<p class="aweight">91.224</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Hafnium"><a href="http://en.wikipedia.org/wiki/Hafnium">
 				<p class="anumber">72</p>
 				<p class="aletter">Hf</p>
 				<p class="aweight">178.49</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Rutherfordium"><a href="http://en.wikipedia.org/wiki/Rutherfordium">
 				<p class="anumber">104</p>
 				<p class="aletter">Rf</p>
 				<p class="aweight">[265.13]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Vanadium"><a href="http://en.wikipedia.org/wiki/Vanadium">
 				<p class="anumber">23</p>
 				<p class="aletter">V</p>
 				<p class="aweight">50.942</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Niobium"><a href="http://en.wikipedia.org/wiki/Niobium">
 				<p class="anumber">41</p>
 				<p class="aletter">Nb</p>
 				<p class="aweight">92.906</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Tantalum"><a href="http://en.wikipedia.org/wiki/Tantalum">
 				<p class="anumber">73</p>
 				<p class="aletter">Ta</p>
 				<p class="aweight">180.95</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Dubnium"><a href="http://en.wikipedia.org/wiki/Dubnium">
 				<p class="anumber">105</p>
 				<p class="aletter">Db</p>
 				<p class="aweight">[268.13]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Chromium"><a href="http://en.wikipedia.org/wiki/Chromium">
 				<p class="anumber">24</p>
 				<p class="aletter">Cr</p>
 				<p class="aweight">51.996</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Molybdenum"><a href="http://en.wikipedia.org/wiki/Molybdenum">
 				<p class="anumber">42</p>
 				<p class="aletter">Mo</p>
 				<p class="aweight">95.96</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Tungsten"><a href="http://en.wikipedia.org/wiki/Tungsten">
 				<p class="anumber">74</p>
 				<p class="aletter">W</p>
 				<p class="aweight">183.84</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Seaborgium"><a href="http://en.wikipedia.org/wiki/Seaborgium">
 				<p class="anumber">106</p>
 				<p class="aletter">Sg</p>
 				<p class="aweight">[271.13]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Manganese"><a href="http://en.wikipedia.org/wiki/Manganese">
 				<p class="anumber">25</p>
 				<p class="aletter">Mn</p>
 				<p class="aweight">54.938</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Technetium"><a href="http://en.wikipedia.org/wiki/Technetium">
 				<p class="anumber">43</p>
 				<p class="aletter">Tc</p>
 				<p class="aweight">[97.91]</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Rhenium"><a href="http://en.wikipedia.org/wiki/Rhenium">
 				<p class="anumber">75</p>
 				<p class="aletter">Re</p>
 				<p class="aweight">186.21</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Bohrium"><a href="http://en.wikipedia.org/wiki/Bohrium">
 				<p class="anumber">107</p>
 				<p class="aletter">Bh</p>
 				<p class="aweight">[270]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Iron"><a href="http://en.wikipedia.org/wiki/Iron">
 				<p class="anumber">26</p>
 				<p class="aletter">Fe</p>
 				<p class="aweight">55.845</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Ruthenium"><a href="http://en.wikipedia.org/wiki/Ruthenium">
 				<p class="anumber">44</p>
 				<p class="aletter">Ru</p>
 				<p class="aweight">101.07</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Osmium"><a href="http://en.wikipedia.org/wiki/Osmium">
 				<p class="anumber">76</p>
 				<p class="aletter">Os</p>
 				<p class="aweight">190.23</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Hassium"><a href="http://en.wikipedia.org/wiki/Hassium">
 				<p class="anumber">108</p>
 				<p class="aletter">Hs</p>
 				<p class="aweight">[277.15]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Cobalt"><a href="http://en.wikipedia.org/wiki/Cobalt">
 				<p class="anumber">27</p>
 				<p class="aletter">Co</p>
 				<p class="aweight">58.933</p>
-			</li>
-			<li><p class="anumber">45</p>
+			</a></li>
+			<li title="Rhodium"><a href="http://en.wikipedia.org/wiki/Rhodium">
+				<p class="anumber">45</p>
 				<p class="aletter">Rh</p>
 				<p class="aweight">102.91</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Iridium"><a href="http://en.wikipedia.org/wiki/Iridium">
 				<p class="anumber">77</p>
 				<p class="aletter">Ir</p>
 				<p class="aweight">192.22</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Meitnerium"><a href="http://en.wikipedia.org/wiki/Meitnerium">
 				<p class="anumber">109</p>
 				<p class="aletter">Mt</p>
 				<p class="aweight">[276.15]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Nickel"><a href="http://en.wikipedia.org/wiki/Nickel">
 				<p class="anumber">28</p>
 				<p class="aletter">Ni</p>
 				<p class="aweight">58.693</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Palladium"><a href="http://en.wikipedia.org/wiki/Palladium">
 				<p class="anumber">46</p>
 				<p class="aletter">Pd</p>
 				<p class="aweight">106.42</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Platinum"><a href="http://en.wikipedia.org/wiki/Platinum">
 				<p class="anumber">78</p>
 				<p class="aletter">Pt</p>
 				<p class="aweight">195.08</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Darmstadtium"><a href="http://en.wikipedia.org/wiki/Darmstadtium">
 				<p class="anumber">110</p>
 				<p class="aletter">Ds</p>
 				<p class="aweight">[281.16]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Copper"><a href="http://en.wikipedia.org/wiki/Copper">
 				<p class="anumber">29</p>
 				<p class="aletter">Cu</p>
 				<p class="aweight">63.546</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Silver"><a href="http://en.wikipedia.org/wiki/Silver">
 				<p class="anumber">47</p>
 				<p class="aletter">Ag</p>
 				<p class="aweight">107.87</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Gold"><a href="http://en.wikipedia.org/wiki/Gold">
 				<p class="anumber">79</p>
 				<p class="aletter">Au</p>
 				<p class="aweight">196.97</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Roentgenium"><a href="http://en.wikipedia.org/wiki/Roentgenium">
 				<p class="anumber">111</p>
 				<p class="aletter">Rg</p>
 				<p class="aweight">[280.16]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic d-block">
-			<li>
+			<li title="Zinc"><a href="http://en.wikipedia.org/wiki/Zinc">
 				<p class="anumber">30</p>
 				<p class="aletter">Zn</p>
 				<p class="aweight">65.38</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Cadmium"><a href="http://en.wikipedia.org/wiki/Cadmium">
 				<p class="anumber">48</p>
 				<p class="aletter">Cd</p>
 				<p class="aweight">112.41</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Mercury"><a href="http://en.wikipedia.org/wiki/Mercury">
 				<p class="anumber">80</p>
 				<p class="aletter">Hg</p>
 				<p class="aweight">200.59</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Copernicium"><a href="http://en.wikipedia.org/wiki/Copernicium">
 				<p class="anumber">112</p>
 				<p class="aletter">Cn</p>
 				<p class="aweight">[285.17]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Boron"><a href="http://en.wikipedia.org/wiki/Boron">
 				<p class="anumber">5</p>
 				<p class="aletter">B</p>
 				<p class="aweight">10.81</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Aluminium"><a href="http://en.wikipedia.org/wiki/Aluminium">
 				<p class="anumber">13</p>
 				<p class="aletter">Al</p>
 				<p class="aweight">26.982</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Gallium"><a href="http://en.wikipedia.org/wiki/Gallium">
 				<p class="anumber">31</p>
 				<p class="aletter">Ga</p>
 				<p class="aweight">69.723</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Indium"><a href="http://en.wikipedia.org/wiki/Indium">
 				<p class="anumber">49</p>
 				<p class="aletter">In</p>
 				<p class="aweight">114.82</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Thallium"><a href="http://en.wikipedia.org/wiki/Thallium">
 				<p class="anumber">81</p>
 				<p class="aletter">Tl</p>
 				<p class="aweight">204.38</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Ununtrium"><a href="http://en.wikipedia.org/wiki/Ununtrium">
 				<p class="anumber">113</p>
 				<p class="aletter">Uut</p>
 				<p class="aweight">[284.18]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Carbon"><a href="http://en.wikipedia.org/wiki/Carbon">
 				<p class="anumber">6</p>
 				<p class="aletter">C</p>
 				<p class="aweight">12.011</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Silicon"><a href="http://en.wikipedia.org/wiki/Silicon">
 				<p class="anumber">14</p>
 				<p class="aletter">Si</p>
 				<p class="aweight">28.085</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Germanium"><a href="http://en.wikipedia.org/wiki/Germanium">
 				<p class="anumber">32</p>
 				<p class="aletter">Ge</p>
 				<p class="aweight">72.63</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Tin"><a href="http://en.wikipedia.org/wiki/Tin">
 				<p class="anumber">50</p>
 				<p class="aletter">Sn</p>
 				<p class="aweight">118.71</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Lead"><a href="http://en.wikipedia.org/wiki/Lead">
 				<p class="anumber">82</p>
 				<p class="aletter">Pb</p>
 				<p class="aweight">207.2</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Flerovium"><a href="http://en.wikipedia.org/wiki/Flerovium">
 				<p class="anumber">114</p>
 				<p class="aletter">Fl</p>
 				<p class="aweight">[289.19]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Nitrogen"><a href="http://en.wikipedia.org/wiki/Nitrogen">
 				<p class="anumber">7</p>
 				<p class="aletter">N</p>
 				<p class="aweight">14.007</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Phosphorus"><a href="http://en.wikipedia.org/wiki/Phosphorus">
 				<p class="anumber">15</p>
 				<p class="aletter">P</p>
 				<p class="aweight">30.974</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Arsenic"><a href="http://en.wikipedia.org/wiki/Arsenic">
 				<p class="anumber">33</p>
 				<p class="aletter">As</p>
 				<p class="aweight">74.922</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Antimony"><a href="http://en.wikipedia.org/wiki/Antimony">
 				<p class="anumber">51</p>
 				<p class="aletter">Sb</p>
 				<p class="aweight">121.76</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Bismuth"><a href="http://en.wikipedia.org/wiki/Bismuth">
 				<p class="anumber">83</p>
 				<p class="aletter">Bi</p>
 				<p class="aweight">208.98</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Ununpentium"><a href="http://en.wikipedia.org/wiki/Ununpentium">
 				<p class="anumber">115</p>
 				<p class="aletter">Uup</p>
 				<p class="aweight">[288.19]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Oxygen"><a href="http://en.wikipedia.org/wiki/Oxygen">
 				<p class="anumber">8</p>
 				<p class="aletter">O</p>
 				<p class="aweight">15.999</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Sulfur"><a href="http://en.wikipedia.org/wiki/Sulfur">
 				<p class="anumber">16</p>
 				<p class="aletter">S</p>
 				<p class="aweight">32.06</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Selenium"><a href="http://en.wikipedia.org/wiki/Selenium">
 				<p class="anumber">34</p>
 				<p class="aletter">Se</p>
 				<p class="aweight">78.97</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Tellurium"><a href="http://en.wikipedia.org/wiki/Tellurium">
 				<p class="anumber">52</p>
 				<p class="aletter">Te</p>
 				<p class="aweight">127.50</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Polonium"><a href="http://en.wikipedia.org/wiki/Polonium">
 				<p class="anumber">84</p>
 				<p class="aletter">Po</p>
 				<p class="aweight">[208.98]</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Livermorium"><a href="http://en.wikipedia.org/wiki/Livermorium">
 				<p class="anumber">116</p>
 				<p class="aletter">Lv</p>
 				<p class="aweight">[293]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Flourine"><a href="http://en.wikipedia.org/wiki/Flourine">
 				<p class="anumber">9</p>
 				<p class="aletter">F</p>
 				<p class="aweight">18.998</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Chlorine"><a href="http://en.wikipedia.org/wiki/Chlorine">
 				<p class="anumber">17</p>
 				<p class="aletter">Cl</p>
 				<p class="aweight">35.45</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Bromine"><a href="http://en.wikipedia.org/wiki/Bromine">
 				<p class="anumber">35</p>
 				<p class="aletter">Br</p>
 				<p class="aweight">79.904</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Iodine"><a href="http://en.wikipedia.org/wiki/Iodine">
 				<p class="anumber">53</p>
 				<p class="aletter">I</p>
 				<p class="aweight">126.90</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Astatine"><a href="http://en.wikipedia.org/wiki/Astatine">
 				<p class="anumber">85</p>
 				<p class="aletter">At</p>
 				<p class="aweight">[209.99]</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Ununseptium"><a href="http://en.wikipedia.org/wiki/Ununseptium">
 				<p class="anumber">117</p>
 				<p class="aletter">Uus</p>
 				<p class="aweight">[294]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic p-block">
-			<li>
+			<li title="Helium"><a href="http://en.wikipedia.org/wiki/Helium">
 				<p class="anumber">2</p>
 				<p class="aletter">He</p>
 				<p class="aweight">4.0026</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Neon"><a href="http://en.wikipedia.org/wiki/Neon">
 				<p class="anumber">10</p>
+				<!-- Make Neon box look like Neon -->
 				<p class="aletter">Ne</p>
 				<p class="aweight">20.180</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Argon"><a href="http://en.wikipedia.org/wiki/Argon">
 				<p class="anumber">18</p>
 				<p class="aletter">Ar</p>
 				<p class="aweight">39.948</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Krypton"><a href="http://en.wikipedia.org/wiki/Krypton">
 				<p class="anumber">36</p>
 				<p class="aletter">Kr</p>
 				<p class="aweight">83.798</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Xenon"><a href="http://en.wikipedia.org/wiki/Xenon">
 				<p class="anumber">54</p>
 				<p class="aletter">Xe</p>
 				<p class="aweight">131.29</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Radon"><a href="http://en.wikipedia.org/wiki/Radon">
 				<p class="anumber">86</p>
 				<p class="aletter">Rn</p>
 				<p class="aweight">222.02</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Ununoctium"><a href="http://en.wikipedia.org/wiki/Ununoctium">
 				<p class="anumber">118</p>
 				<p class="aletter">Uuo</p>
 				<p class="aweight">[294]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul id="bottom" class="periodic">
-			<li><p>*Lanthanoids</p></li>
-			<li><p>**Actinoids</p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Lanthanide">*Lanthanides</a></p></li>
+			<li><p><a href="http://en.wikipedia.org/wiki/Actinide">**Actinides<a/></p></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Lanthanum"><a href="http://en.wikipedia.org/wiki/Lanthanum">
 				<p class="anumber">57</p>
 				<p class="aletter one_star">La</p>
 				<p class="aweight">138.91</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Actinium"><a href="http://en.wikipedia.org/wiki/Actinium">
 				<p class="anumber">89</p>
 				<p class="aletter two_star">Ac</p>
 				<p class="aweight">[227.03]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Cerium"><a href="http://en.wikipedia.org/wiki/Cerium">
 				<p class="anumber">58</p>
 				<p class="aletter">Ce</p>
 				<p class="aweight">140.12</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Thorium"><a href="http://en.wikipedia.org/wiki/Thorium">
 				<p class="anumber">90</p>
 				<p class="aletter">Th</p>
 				<p class="aweight">232.04</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Praseodymium"><a href="http://en.wikipedia.org/wiki/Praseodymium">
 				<p class="anumber">59</p>
 				<p class="aletter">Pr</p>
 				<p class="aweight">140.91</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Protactinium"><a href="http://en.wikipedia.org/wiki/Protactinium">
 				<p class="anumber">91</p>
 				<p class="aletter">Pa</p>
 				<p class="aweight">231.04</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Neodymium"><a href="http://en.wikipedia.org/wiki/Neodymium">
 				<p class="anumber">60</p>
 				<p class="aletter">Nd</p>
 				<p class="aweight">144.24</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Uranium"><a href="http://en.wikipedia.org/wiki/Uranium">
 				<p class="anumber">92</p>
 				<p class="aletter">U</p>
 				<p class="aweight">238.03</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Promethium"><a href="http://en.wikipedia.org/wiki/Promethium">
 				<p class="anumber">61</p>
 				<p class="aletter">Pm</p>
 				<p class="aweight">[144.91]</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Neptunium"><a href="http://en.wikipedia.org/wiki/Neptunium">
 				<p class="anumber">93</p>
 				<p class="aletter">Np</p>
 				<p class="aweight">[237.05]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Samarium"><a href="http://en.wikipedia.org/wiki/Samarium">
 				<p class="anumber">62</p>
 				<p class="aletter">Sm</p>
 				<p class="aweight">150.36</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Plutonium"><a href="http://en.wikipedia.org/wiki/Plutonium">
 				<p class="anumber">94</p>
 				<p class="aletter">Pu</p>
 				<p class="aweight">[244.06]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Europium"><a href="http://en.wikipedia.org/wiki/Europium">
 				<p class="anumber">63</p>
 				<p class="aletter">Eu</p>
 				<p class="aweight">151.96</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Americium"><a href="http://en.wikipedia.org/wiki/Americium">
 				<p class="anumber">95</p>
 				<p class="aletter">Am</p>
 				<p class="aweight">[243.06]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Gadolinium"><a href="http://en.wikipedia.org/wiki/Gadolinium">
 				<p class="anumber">64</p>
 				<p class="aletter">Gd</p>
 				<p class="aweight">157.25</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Curium"><a href="http://en.wikipedia.org/wiki/Curium">
 				<p class="anumber">96</p>
 				<p class="aletter">Cm</p>
 				<p class="aweight">[247.07]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Terbium"><a href="http://en.wikipedia.org/wiki/Terbium">
 				<p class="anumber">65</p>
 				<p class="aletter">Tb</p>
 				<p class="aweight">158.93</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Berkelium"><a href="http://en.wikipedia.org/wiki/Berkelium">
 				<p class="anumber">97</p>
 				<p class="aletter">Bk</p>
 				<p class="aweight">[247.07]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Dysprosium"><a href="http://en.wikipedia.org/wiki/Dysprosium">
 				<p class="anumber">66</p>
 				<p class="aletter">Dy</p>
 				<p class="aweight">162.50</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Californium"><a href="http://en.wikipedia.org/wiki/Californium">
 				<p class="anumber">98</p>
 				<p class="aletter">Cf</p>
 				<p class="aweight">[251.08]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Holmium"><a href="http://en.wikipedia.org/wiki/Holmium">
 				<p class="anumber">67</p>
 				<p class="aletter">Ho</p>
 				<p class="aweight">164.93</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Einsteinium"><a href="http://en.wikipedia.org/wiki/Einsteinium">
 				<p class="anumber">99</p>
 				<p class="aletter">Es</p>
 				<p class="aweight">[252.08]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Erbium"><a href="http://en.wikipedia.org/wiki/Erbium">
 				<p class="anumber">68</p>
 				<p class="aletter">Er</p>
 				<p class="aweight">167.26</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Fermium"><a href="http://en.wikipedia.org/wiki/Fermium">
 				<p class="anumber">100</p>
 				<p class="aletter">Fm</p>
 				<p class="aweight">[257.10]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Thulium"><a href="http://en.wikipedia.org/wiki/Thulium">
 				<p class="anumber">69</p>
 				<p class="aletter">Tm</p>
 				<p class="aweight">168.93</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Mendelevium"><a href="http://en.wikipedia.org/wiki/Mendelevium">
 				<p class="anumber">101</p>
 				<p class="aletter">Md</p>
 				<p class="aweight">[258.10]</p>
-			</li>
+			</a></li>
 		</ul>
 		<ul class="periodic f-block">
-			<li>
+			<li title="Ytterbium"><a href="http://en.wikipedia.org/wiki/Ytterbium">
 				<p class="anumber">70</p>
 				<p class="aletter">Yb</p>
 				<p class="aweight">173.05</p>
-			</li>
-			<li>
+			</a></li>
+			<li title="Nobelium"><a href="http://en.wikipedia.org/wiki/Nobelium">
 				<p class="anumber">102</p>
 				<p class="aletter">No</p>
 				<p class="aweight">[259.10]</p>
-			</li>
+			</a></li>
 		</ul>
 	</div>
 </body>
